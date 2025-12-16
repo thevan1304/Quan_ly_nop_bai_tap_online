@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 08, 2025 lúc 08:02 AM
+-- Thời gian đã tạo: Th12 13, 2025 lúc 06:32 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -37,6 +37,13 @@ CREATE TABLE `assignments` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `assignments`
+--
+
+INSERT INTO `assignments` (`id`, `title`, `description`, `deadline`, `created_by`, `subject_id`, `created_at`) VALUES
+(3, 'Lập trình web bất kỳ', '.', '2025-12-18 20:53:00', 1, 2, '2025-12-11 13:53:23');
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +58,13 @@ CREATE TABLE `subjects` (
   `teacher_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `subjects`
+--
+
+INSERT INTO `subjects` (`id`, `name`, `code`, `description`, `teacher_id`, `created_at`) VALUES
+(2, 'Lập trình trên môi trường Web', 'DC2HT36', '', 1, '2025-12-09 13:01:52');
 
 -- --------------------------------------------------------
 
@@ -67,6 +81,13 @@ CREATE TABLE `submissions` (
   `feedback` text DEFAULT NULL,
   `submitted_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `submissions`
+--
+
+INSERT INTO `submissions` (`id`, `assignment_id`, `student_id`, `file_path`, `grade`, `feedback`, `submitted_at`) VALUES
+(2, 3, 2, 'uploads/1765461498_index.html', 8, '', '2025-12-11 13:58:18');
 
 -- --------------------------------------------------------
 
@@ -88,7 +109,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `fullname`, `role`, `created_at`) VALUES
-(1, 'vuduytung', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Vũ Duy Tùng', 'Giảng Viên', '2025-12-08 07:01:30');
+(1, 'vuduytung', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Vũ Duy Tùng', 'Giảng Viên', '2025-12-08 07:01:30'),
+(2, 'thevan', '$2y$10$Rs.gvaMiVBxl/sv0LyPCUuOGdkTSwWCZZCCiEdDmzP0HMIT7LDhYi', 'Nguyễn Trần Thế Văn', 'Sinh Viên', '2025-12-08 07:11:05');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -132,25 +154,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `assignments`
 --
 ALTER TABLE `assignments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `submissions`
 --
 ALTER TABLE `submissions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
