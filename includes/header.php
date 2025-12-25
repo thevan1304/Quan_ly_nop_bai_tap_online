@@ -1,5 +1,5 @@
 <?php 
-session_start(); 
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -11,12 +11,13 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
   <div class="container">
     <a class="navbar-brand" href="index.php">QUẢN LÝ BÀI TẬP</a>
-    
-    <div class="collapse navbar-collapse">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto">
         <?php if (isset($_SESSION['user_id'])): ?>
             <li class="nav-item dropdown">
@@ -24,18 +25,18 @@ session_start();
                     Xin chào, <strong><?php echo $_SESSION['fullname']; ?></strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="profile.php">Hồ sơ</a></li>
+                    <li><a class="dropdown-item" href="profile.php">Hồ sơ cá nhân</a></li>
                     <li><a class="dropdown-item" href="change_password.php">Đổi mật khẩu</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item text-danger" href="logout.php">Đăng xuất</a></li>
                 </ul>
             </li>
-            <?php else: ?>
-                <li class="nav-item"><a class="nav-link" href="login.php">Đăng nhập</a></li>
-                <li class="nav-item"><a class="nav-link" href="register.php">Đăng ký</a></li>
-                <?php endif; ?>
-            </ul>
-        </div>
+        <?php endif; ?>
+
+        <?php 
+        ?>
+      </ul>
     </div>
+  </div>
 </nav>
 <div class="container main-content">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 13, 2025 lúc 06:32 AM
+-- Thời gian đã tạo: Th12 25, 2025 lúc 12:54 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -42,7 +42,8 @@ CREATE TABLE `assignments` (
 --
 
 INSERT INTO `assignments` (`id`, `title`, `description`, `deadline`, `created_by`, `subject_id`, `created_at`) VALUES
-(3, 'Lập trình web bất kỳ', '.', '2025-12-18 20:53:00', 1, 2, '2025-12-11 13:53:23');
+(3, 'Lập trình web bất kỳ', '.', '2025-12-18 20:53:00', 1, 2, '2025-12-11 13:53:23'),
+(4, 'Lập trình C', '.', '2025-12-29 18:51:00', 1, 2, '2025-12-25 11:51:41');
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,8 @@ CREATE TABLE `submissions` (
 --
 
 INSERT INTO `submissions` (`id`, `assignment_id`, `student_id`, `file_path`, `grade`, `feedback`, `submitted_at`) VALUES
-(2, 3, 2, 'uploads/1765461498_index.html', 8, '', '2025-12-11 13:58:18');
+(2, 3, 2, 'uploads/1765461498_index.html', 8, '', '2025-12-11 13:58:18'),
+(3, 4, 3, 'uploads/1766663587_Ảnh chụp màn hình 2025-12-25 185300.png', NULL, NULL, '2025-12-25 11:53:07');
 
 -- --------------------------------------------------------
 
@@ -110,7 +112,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `fullname`, `role`, `created_at`) VALUES
 (1, 'vuduytung', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Vũ Duy Tùng', 'Giảng Viên', '2025-12-08 07:01:30'),
-(2, 'thevan', '$2y$10$Rs.gvaMiVBxl/sv0LyPCUuOGdkTSwWCZZCCiEdDmzP0HMIT7LDhYi', 'Nguyễn Trần Thế Văn', 'Sinh Viên', '2025-12-08 07:11:05');
+(2, 'thevan', '$2y$10$Rs.gvaMiVBxl/sv0LyPCUuOGdkTSwWCZZCCiEdDmzP0HMIT7LDhYi', 'Nguyễn Trần Thế Văn', 'Sinh Viên', '2025-12-08 07:11:05'),
+(3, 'ngvana', '$2y$10$mfTP4LoXBKEQ/ObzEKmI5Oq0Ng35G1B3PybcCPkaLRoQ8Nmu0iwRa', 'Nguyễn Văn A', 'Sinh Viên', '2025-12-25 11:50:50');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -154,7 +157,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `assignments`
 --
 ALTER TABLE `assignments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `subjects`
@@ -166,13 +169,13 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT cho bảng `submissions`
 --
 ALTER TABLE `submissions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
